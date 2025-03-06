@@ -1,0 +1,42 @@
+Workflow For running and Testing the hubspot
+1. First i have created a virtual environment to download the resources independently
+    python3 -m venv env
+    source env/bin/activate
+
+2. Following that we have gone through frontend directory installing all the dependencies
+    and running it.
+    cd frontend
+    npm i
+    npm run dev
+
+3. After that i have gone through the backend directory installing all the dependencies
+    pip install -r requirements.txt
+    Many more function such as dotenv,fastapi, httpx and other i have downloaded indiviually
+
+4. After that i have downloaded the redis for running for macOS and start running it.
+    brew install redis
+    brew services start redis
+
+5. following the above step i took airtable as a base to create hubspot.py.
+    Therefore i created airtable app and tested the whole process using the
+    CLIENT_ID and CLIENT_SECRET
+
+6. I have also set the OAuth redirect URL in Airtable developer portal with the same
+    as airtable.py file
+
+7. After getting the workflow first i created the frontend hubsport.js similar to
+    airtable.js
+
+8. Also imported hubspot.js in data-form.js and integration-form.js
+
+9. After building the frontend i started building the backend.
+
+10. First i make an app in the hubspot by signing in
+
+11. Copied the code from airtable.py doing some changes so that it work for the hubspot.py
+
+12. I have set the Redirect URI to the following in hubspot developer portal
+    http://localhost:8000/integrations/hubspot/oauth2callback
+
+13. To ensure that all the code are running i have all modified the return of
+    get_items_hubspot as '[1,2,3]'
